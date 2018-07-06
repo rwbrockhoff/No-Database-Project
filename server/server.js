@@ -13,13 +13,9 @@ app.use(bodyParser.json());
 
 app.post('/api/list', listCtrl.create);
 
+app.get('/api/list', listCtrl.read);
 
-
-
-
-
-
-
+app.put('/api/list', listCtrl.update);
 
 // ===============LISTENING======================//
 app.listen(port, () => {

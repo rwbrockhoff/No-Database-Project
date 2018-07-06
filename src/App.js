@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './App.css';
 import Title from './components/Title';
 import AddItem from './components/AddItem';
 import List from './components/List';
 
 class App extends Component {
+  
   constructor(){
     super()
 
@@ -14,6 +16,15 @@ class App extends Component {
 
     this.postToApp = this.postToApp.bind(this);
     
+  }
+
+  componentDidMount(){
+    axios.get('/api/list').then( (res) => {
+      this.setState({
+        listValue: res.data
+      })
+      console.log(res.data)
+    })
   }
 
 

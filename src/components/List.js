@@ -17,7 +17,7 @@ export default class List extends Component {
         })
 
         return (
-            <div> {listOutItems}    </div>
+            <div> {listOutItems} <button> Edit </button>   </div>
         )
     }
 }
