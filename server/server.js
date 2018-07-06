@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 // ===============ENDPOINTS====================== //
 
-app.post('/api/list', listCtrl.post);
+app.post('/api/list', listCtrl.create);
 
 
 
