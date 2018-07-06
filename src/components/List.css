@@ -1,0 +1,12 @@
+p {
+    width: 40vw;
+    height: 3vh;
+    background-color: white;
+    color: black;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Montserrat;
+    font-size: 12px;
+}

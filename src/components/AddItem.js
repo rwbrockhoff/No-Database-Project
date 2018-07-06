@@ -3,12 +3,12 @@ import './AddItem.css';
 import axios from 'axios';
 
 export default class AddItem extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
 
         this.state ={
             input: '',
-            savedState: ''
+            savedState: '',
         }
     }
     
@@ -18,13 +18,15 @@ export default class AddItem extends Component {
         })
     }
 
-    buttonHandle(){
+    buttonHandle(props){
         let typedValue = this.state.input;
         this.setState({
             savedState: typedValue
         })
 
-        axios.post('/api/list', {listValue: this.state.savedState});
+        axios.post('/api/list', {listValue: typedValue}).then( (res) => {
+            this.props.postToApp(res.data);
+        })
     }
     
     
@@ -34,7 +36,6 @@ export default class AddItem extends Component {
             <div className="container">
             <input placeholder="New Task" onChange={(e) => this.textHandle(e.target.value)}/>
             <button onClick={() => this.buttonHandle()}> + </button>
-            <p> {this.state.savedState} </p>
             </div>
         )
     }

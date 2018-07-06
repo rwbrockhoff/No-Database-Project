@@ -4,9 +4,9 @@ module.exports = {
     //--------------------------//
 
     create: (req, res) => {
-    toDoListArray.push(req.listValue)
+    toDoListArray.push(req.body.listValue)
 
-    res.status(200).send(console.log('jaguar says hello'));
+    res.status(200).send(toDoListArray);
     },
 
 //--------------------------//
