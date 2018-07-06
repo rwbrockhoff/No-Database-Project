@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
@@ -15,6 +16,6 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "main" : "./server/server.js",
-  "proxy" : "http://localhost:3001"
+  "main": "./server/server.js",
+  "proxy": "http://localhost:3001"
 }
