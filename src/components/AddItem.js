@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './AddItem.css';
+import axios from 'axios';
 
 export default class AddItem extends Component {
     constructor(){
