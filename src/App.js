@@ -40,6 +40,7 @@ class App extends Component {
     this.setState({
       listValue: list
     })
+    
   }
 
   passListWithDeletes(list){
