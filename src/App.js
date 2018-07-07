@@ -15,6 +15,8 @@ class App extends Component {
     }
 
     this.postToApp = this.postToApp.bind(this);
+    this.passUpdated = this.passUpdated.bind(this);
+    this.passListWithDeletes = this.passListWithDeletes.bind(this);
     
   }
 
@@ -34,13 +36,29 @@ class App extends Component {
     })
   }
 
+  passUpdated(list){
+    this.setState({
+      listValue: list
+    })
+  }
+
+  passListWithDeletes(list){
+    console.log(list, "haids")
+    this.setState({
+      listValue: list
+    })
+  }
+
   render() {
 
     return (
       <div className="App">
         <Title />
         <AddItem postToApp={this.postToApp}/>
-        <List listValue={this.state.listValue}/>
+        <List listValue={this.state.listValue} 
+          passUpdated={this.passUpdated} 
+          passListWithDeletes={this.passListWithDeletes}
+          />
       </div>
     );
   }

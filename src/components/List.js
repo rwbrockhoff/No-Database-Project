@@ -10,6 +10,7 @@ export default class List extends Component {
             inputToChange: '',
             editToggle: false,
             workingInput: ''
+            
         }
     }
     
@@ -20,6 +21,8 @@ export default class List extends Component {
         })
         
     }
+
+    
    
     
 
@@ -27,8 +30,13 @@ export default class List extends Component {
         let listOutItems = this.props.listValue.map( (e, i) => {
             
             
-            return  <ListItem nameValue={e} index={i}/>
-            
+            return  (
+            <ListItem nameValue={e} index={i} 
+                        passUpdated={this.props.passUpdated}
+                        passListWithDeletes = {this.props.passListWithDeletes}
+                        key={i}
+                        />
+            )
     })
 
     return (

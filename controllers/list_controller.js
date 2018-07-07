@@ -20,16 +20,18 @@ module.exports = {
 //--------------------------//
 
     update: (req, res) => {
-
-
+    let actualIndex = req.body.index;
+    toDoListArray.splice(actualIndex, 1, req.body.listValue)
     res.status(200).send(toDoListArray);
     },
 
 //--------------------------//
 
     delete: (req, res) => {
-
-
+    
+    let actualDeleteIndex = req.body.index;
+    console.log(actualDeleteIndex)
+    toDoListArray.splice(actualDeleteIndex, 1)
     res.status(200).send(toDoListArray);
     },
 }

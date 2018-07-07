@@ -17,6 +17,8 @@ app.get('/api/list', listCtrl.read);
 
 app.put('/api/list', listCtrl.update);
 
+app.delete('/api/list', listCtrl.delete);
+
 // ===============LISTENING======================//
 app.listen(port, () => {
     console.log(`Listening on port: ${port}`);
