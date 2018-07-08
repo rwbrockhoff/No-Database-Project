@@ -33,10 +33,11 @@ export default class ListItem extends Component {
         this.setState({
             savedUpdatedText: finalUserSavedText
         })
-        
-        axios.put('/api/list', {listValue: this.state.savedUpdatedText, index: this.props.index}).then( (res) => {
+       
+        axios.put('/api/list', {listValue: finalUserSavedText, index: this.props.index}).then( (res) => {
             
             this.props.passUpdated(res.data);
+            console.log('saveHandle res.data:', res.data)
         })
 
         this.setState({

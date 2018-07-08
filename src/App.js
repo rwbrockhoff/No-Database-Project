@@ -44,7 +44,6 @@ class App extends Component {
   }
 
   passListWithDeletes(list){
-    console.log(list, "haids")
     this.setState({
       listValue: list
     })
