@@ -29,13 +29,17 @@ export default class AddItem extends Component {
         })
     }
     
-    
+    handleEnter = (event) => {
+        if(event.key === 'Enter'){
+          return this.buttonHandle()
+        }
+      }
     
     render(){
         return (
             <div className="container">
-            <input placeholder="New Task" onChange={(e) => this.textHandle(e.target.value)}/>
-            <button onClick={() => this.buttonHandle()}> + </button>
+            <input type="text" placeholder="New Task" onKeyPress={this.handleEnter} onChange={(e) => this.textHandle(e.target.value)}/>
+            <button type ="submit" onClick={() => this.buttonHandle()}> + </button>
             </div>
         )
     }

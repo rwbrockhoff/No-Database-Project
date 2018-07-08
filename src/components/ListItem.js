@@ -70,6 +70,12 @@ export default class ListItem extends Component {
        })
         
     }
+
+    handleEnter = (event) => {
+        if(event.key === 'Enter'){
+          return this.saveHandle();
+        }
+      }
     
     whatReturns(){
     
@@ -88,7 +94,7 @@ export default class ListItem extends Component {
             return (
                 <div className="listItemContainer">
             <p>  
-                <input type = "text" defaultValue={this.props.nameValue} onChange={(e) => this.saveUpdatedText(e.target.value)}/> 
+                <input type = "text" defaultValue={this.props.nameValue} onKeyPress={this.handleEnter} onChange={(e) => this.saveUpdatedText(e.target.value)}/> 
                 <button onClick={() => this.saveHandle()}>Save</button>   
                 <button onClick={() => this.handleDelete()}>Delete</button>
             </p>
