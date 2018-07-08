@@ -25,7 +25,7 @@ class App extends Component {
       this.setState({
         listValue: res.data
       })
-      console.log(res.data)
+      
     })
   }
 
@@ -44,7 +44,7 @@ class App extends Component {
   }
 
   passListWithDeletes(list){
-    this.setState({
+   this.setState({
       listValue: list
     })
   }

@@ -12,6 +12,7 @@ export default class List extends Component {
             workingInput: ''
             
         }
+       
     }
     
     buttonHandle(index){
@@ -22,22 +23,23 @@ export default class List extends Component {
         
     }
 
-    
    
-    
+      
 
     render(){
+        let id = 0;
         let listOutItems = this.props.listValue.map( (e, i) => {
-            
-            
+            id++
+           
             return  (
-            <ListItem nameValue={e} index={i} 
+            <ListItem nameValue={e} id={id} index={i}
                         passUpdated={this.props.passUpdated}
                         passListWithDeletes = {this.props.passListWithDeletes}
                         key={i}
                         />
             )
     })
+       
 
     return (
        <div> {listOutItems} </div>

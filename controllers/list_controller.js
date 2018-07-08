@@ -28,10 +28,11 @@ module.exports = {
 //--------------------------//
 
     delete: (req, res) => {
-    
     let actualDeleteIndex = req.body.index;
-    console.log(actualDeleteIndex)
+    
     toDoListArray.splice(actualDeleteIndex, 1)
     res.status(200).send(toDoListArray);
+    
     },
 }
+

@@ -37,7 +37,7 @@ export default class ListItem extends Component {
         axios.put('/api/list', {listValue: finalUserSavedText, index: this.props.index}).then( (res) => {
             
             this.props.passUpdated(res.data);
-            console.log('saveHandle res.data:', res.data)
+            
         })
 
         this.setState({
@@ -50,12 +50,14 @@ export default class ListItem extends Component {
     }
 
     handleDelete(props){
-        axios.delete('/api/list', { data: {listValue: this.state.savedUpdatedText, index: this.props.index}}).then( (res) => {
-            console.log(res)
+       
+        axios.delete('/api/list', { data: {listValue: this.state.savedUpdatedText, index: this.props.index, id: this.props.id}}).then( (res) => {
             this.props.passListWithDeletes(res.data);
-            console.log('resdata', res.data)
+            
+               
         })
         
+       
 
         
     }
@@ -74,7 +76,7 @@ export default class ListItem extends Component {
         if (this.state.editToggle === false){
             return (
                 <div className="listItemContainer">
-            <p>{this.state.displayText}  
+            <p>{this.props.nameValue}  
             <button onClick={() => this.editToggle()}>Edit</button> 
             <button onClick={() => this.handleDelete()}>Delete</button>
             </p>  
@@ -86,7 +88,7 @@ export default class ListItem extends Component {
             return (
                 <div className="listItemContainer">
             <p>  
-                <input type = "text" defaultValue={this.state.displayText} onChange={(e) => this.saveUpdatedText(e.target.value)}/> 
+                <input type = "text" defaultValue={this.props.nameValue} onChange={(e) => this.saveUpdatedText(e.target.value)}/> 
                 <button onClick={() => this.saveHandle()}>Save</button>   
                 <button onClick={() => this.handleDelete()}>Delete</button>
             </p>
