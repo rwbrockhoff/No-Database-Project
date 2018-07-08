@@ -83,8 +83,8 @@ export default class ListItem extends Component {
             return (
                 <div className="listItemContainer">
             <p>{this.props.nameValue}  
-            <button onClick={() => this.editToggle()}>Edit</button> 
-            <button onClick={() => this.handleDelete()}>Delete</button>
+            <button className="edit" onClick={() => this.editToggle()}>Edit</button> 
+            <button className="delete" onClick={() => this.handleDelete()}>X</button>
             </p>  
             </div>
             )
@@ -95,8 +95,8 @@ export default class ListItem extends Component {
                 <div className="listItemContainer">
             <p>  
                 <input type = "text" defaultValue={this.props.nameValue} onKeyPress={this.handleEnter} onChange={(e) => this.saveUpdatedText(e.target.value)}/> 
-                <button onClick={() => this.saveHandle()}>Save</button>   
-                <button onClick={() => this.handleDelete()}>Delete</button>
+                <button className="save" onClick={() => this.saveHandle()}>Save</button>   
+                <button className="delete" onClick={() => this.handleDelete()}>X</button>
             </p>
             </div>
             )

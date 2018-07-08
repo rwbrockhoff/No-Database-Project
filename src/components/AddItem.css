@@ -1,0 +1,20 @@
+input {
+    width: 40vw;
+    height: 3vh;
+    border: none;
+}
+
+input:focus {
+   outline: none;
+}
+
+div.container button {
+    background-color: transparent;
+    border: 3px solid white;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-left: 1vh;
+    padding-left: 10px;
+    padding-right: 10px;
+}

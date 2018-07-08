@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700');
 p {
     width: 40vw;
     height: 3vh;
@@ -12,12 +13,30 @@ p {
 }
 
 div.listItemContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+    position: relative;
 
 }
-div.listItemContainer button {
-   margin-left: 50px;
+div.listItemContainer button.delete {
+   position: absolute;
+   right: 1vw;
+   background-color: transparent;
+   color: red;
+   font-size: 15px;
+   border: none;
 }
+
+div.listItemContainer button.edit {
+    position: absolute;
+    right: 4vw;
+    background-color: transparent;
+    border: none;
+
+ }
+
+div.listItemContainer button.save {
+    position: absolute;
+    right: 4vw;
+    background-color: transparent;
+    border: none;
+    color: green;
+ }
