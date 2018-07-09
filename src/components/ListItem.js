@@ -48,27 +48,18 @@ export default class ListItem extends Component {
             displayText: finalUserSavedText
 
         })
-
-        
     }
 
     handleDelete(props){
-       
         axios.delete('/api/list', { data: {listValue: this.state.savedUpdatedText, index: this.props.index, id: this.props.id}}).then( (res) => {
-            this.props.passListWithDeletes(res.data);
-           
-               
+            this.props.passListWithDeletes(res.data);  
         })
-        
     }
-
-
 
     editToggle(){
        this.setState({
            editToggle: !this.state.editToggle
        })
-        
     }
 
     handleEnter = (event) => {
@@ -91,25 +82,13 @@ export default class ListItem extends Component {
       }
       
       handlePriority = () => {
-          this.setState({
-              starToggle: starFilled
-          })
-
           axios.put('/api/list/priority', {listValue: this.props.nameValue, index: this.props.index}).then( (res) => {
-        
             this.props.passUpdated(res.data);
-            
         })
-
-        this.setState({
-            starToggle: starOutline
-        })
-
-
       }
     
     whatReturns(){
-    
+        
         if (this.state.editToggle === false){
             return (
                 <div className="listItemContainer">
@@ -118,7 +97,8 @@ export default class ListItem extends Component {
             <input id="deleteCheck" className="delete" type="checkbox" onClick={() => this.handleDelete()} checked={false}/>
             {this.props.nameValue}  
             <button className="edit" onClick={() => this.editToggle()}>Edit</button> 
-            <img className="star" src={this.state.starToggle} onClick={this.handlePriority}/>
+            <img imgID={this.props.id} className="star" src={this.state.starToggle} onClick={this.handlePriority}/>
+            
             </p>  
             </div>
             )

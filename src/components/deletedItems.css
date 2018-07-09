@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+button.show {
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Open Sans';
+
+}
+
+button.show:focus {
+    border: none;
+}

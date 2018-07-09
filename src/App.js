@@ -5,6 +5,7 @@ import Title from './components/Title';
 import AddItem from './components/AddItem';
 import List from './components/List';
 import Weather from './components/Weather';
+import DeletedItems from "./components/DeletedItems";
 const API_KEY = "c1c40fc580af8fa9a51ba8fced2b634b";
 
 class App extends Component {
@@ -16,7 +17,7 @@ class App extends Component {
       listValue: [],
       deleteCount: 0,
       currentWeather: 0,
-      currentCity: "Provo"
+      currentCity: "Berlin"
     }
 
     this.postToApp = this.postToApp.bind(this);
@@ -96,6 +97,7 @@ class App extends Component {
           passUpdated={this.passUpdated} 
           passListWithDeletes={this.passListWithDeletes}
           />
+          <DeletedItems />
       </div>
     );
   }
