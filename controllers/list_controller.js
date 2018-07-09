@@ -41,7 +41,11 @@ module.exports = {
     },
 
     updatePriority: (req, res) => {
-        res.status(200).send(console.log('Update priority'));
+        let actualIndex = req.body.index;
+        
+        let tempArr = toDoListArray.splice(actualIndex, 1)
+        toDoListArray.unshift(tempArr[0])
+        res.status(200).send(toDoListArray);
     }
 }
 

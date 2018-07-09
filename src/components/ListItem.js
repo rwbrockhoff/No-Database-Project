@@ -77,6 +77,19 @@ export default class ListItem extends Component {
         }
       }
 
+      handleStar(){
+          if(this.state.starToggle === starFilled){
+              this.setState({
+                  starToggle: starOutline
+              })
+          }
+          else if (this.state.starToggle === starOutline){
+              this.setState({
+                  starToggle: starFilled
+              })
+          }
+      }
+      
       handlePriority = () => {
           this.setState({
               starToggle: starFilled
@@ -84,8 +97,12 @@ export default class ListItem extends Component {
 
           axios.put('/api/list/priority', {listValue: this.props.nameValue, index: this.props.index}).then( (res) => {
         
+            this.props.passUpdated(res.data);
             
-            
+        })
+
+        this.setState({
+            starToggle: starOutline
         })
 
 
