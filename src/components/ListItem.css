@@ -55,7 +55,7 @@ div.listItemContainer button.save {
     color: green;
  }
 
- img {
+ img.star {
      width: 20px;
      position: absolute;
      right: 1vw;

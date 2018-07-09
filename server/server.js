@@ -19,6 +19,8 @@ app.get('/api/list', listCtrl.read);
 
 app.put('/api/list', listCtrl.update);
 
+app.put('/api/list/priority', listCtrl.updatePriority);
+
 app.delete('/api/list', listCtrl.delete);
 
 app.get('api.openweathermap.org', listCtrl.createweather);

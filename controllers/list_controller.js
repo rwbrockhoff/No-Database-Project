@@ -38,6 +38,10 @@ module.exports = {
 
     createweather: (req, res) => {
         res.status(200).send(console.log('weather get request success'));
+    },
+
+    updatePriority: (req, res) => {
+        res.status(200).send(console.log('Update priority'));
     }
 }
 
