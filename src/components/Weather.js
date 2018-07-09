@@ -15,10 +15,15 @@ export default class Weather extends Component {
     toggleLocation = () => {
         this.setState({
             changeLocation: !this.state.changeLocation
-        })
-
-        
+        })   
     }
+
+    handleUpdateEnter = (event) => {
+        if(event.key === 'Enter'){
+          return this.changeCity();
+        }
+      }
+
 
     changeInput(e){
         this.setState({
@@ -49,7 +54,9 @@ export default class Weather extends Component {
                 return (
                 <div className="weather">
                 <weather>New Location:   </weather> 
-                <input onChange={ (e) => this.changeInput(e.target.value)} placeholder="Ex: Boise, Dallas, Phoenix"/>
+                <input onChange={ (e) => this.changeInput(e.target.value)} 
+                    placeholder={this.props.currentCity}
+                    onKeyPress={this.handleUpdateEnter}/>
                 <button onClick={this.changeCity}> Update </button>
                 </div>  )
                 

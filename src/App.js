@@ -71,7 +71,7 @@ class App extends Component {
       currentCity: city
     })
 
-    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.currentCity}&units=imperial&appid=${API_KEY}`).then( (res) => {
+    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${API_KEY}`).then( (res) => {
         
       this.setState({
         currentWeather: Math.round(res.data.main.temp)
