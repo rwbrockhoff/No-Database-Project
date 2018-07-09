@@ -5,13 +5,14 @@ p {
     height: 3vh;
     background-color: white;
     padding: 5px 5px;
-    padding-left: 2vw;
+    
     color: black;
     border-radius: 7px;
     display: flex;
     justify-content:left;
     font-family: 'Open Sans';
     font-size: 14px;
+    margin-left: 1vw;
     
 }
 
@@ -31,14 +32,9 @@ div.listItemContainer {
     
 
 }
-div.listItemContainer button.delete {
-   position: absolute;
-   right: 1vw;
-   background-color: transparent;
-   color: red;
-   font-size: 15px;
-   font-family: 'Open Sans';
-   border: none;
+div.listItemContainer input.delete {
+    margin-right: 2vw;
+    
 }
 
 div.listItemContainer button.edit {
@@ -57,4 +53,10 @@ div.listItemContainer button.save {
     border: none;
     font-family: 'Open Sans';
     color: green;
+ }
+
+ img {
+     width: 20px;
+     position: absolute;
+     right: 1vw;
  }

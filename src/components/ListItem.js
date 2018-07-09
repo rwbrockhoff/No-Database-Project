@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './ListItem.css';
 import axios from 'axios';
+import starOutline from '../assets/star_outline.svg';
 
 
 export default class ListItem extends Component {
@@ -35,7 +36,7 @@ export default class ListItem extends Component {
         })
        
         axios.put('/api/list', {listValue: finalUserSavedText, index: this.props.index}).then( (res) => {
-            
+        
             this.props.passUpdated(res.data);
             
         })
@@ -56,9 +57,6 @@ export default class ListItem extends Component {
            
                
         })
-        
-       
-
         
     }
 
@@ -82,9 +80,12 @@ export default class ListItem extends Component {
         if (this.state.editToggle === false){
             return (
                 <div className="listItemContainer">
-            <p>{this.props.nameValue}  
+            
+            <p>
+            <input id="deleteCheck" className="delete" type="checkbox" onClick={() => this.handleDelete()} checked={false}/>
+            {this.props.nameValue}  
             <button className="edit" onClick={() => this.editToggle()}>Edit</button> 
-            <button className="delete" onClick={() => this.handleDelete()}>X</button>
+            <img src={starOutline}/>
             </p>  
             </div>
             )
