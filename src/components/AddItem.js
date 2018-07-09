@@ -18,7 +18,7 @@ export default class AddItem extends Component {
         })
     }
 
-    buttonHandle(props){
+    buttonHandle(event){
         let typedValue = this.state.input;
         this.setState({
             savedState: typedValue
@@ -27,19 +27,22 @@ export default class AddItem extends Component {
         axios.post('/api/list', {listValue: typedValue}).then( (res) => {
             this.props.postToApp(res.data);
         })
+        event.target.value="";
+
     }
     
     handleEnter = (event) => {
         if(event.key === 'Enter'){
-          return this.buttonHandle()
+          return this.buttonHandle(event)
         }
+
       }
     
     render(){
         return (
             <div className="container">
-            <input type="text" placeholder="New Task" onKeyPress={this.handleEnter} onChange={(e) => this.textHandle(e.target.value)}/>
-            <button type ="submit" onClick={() => this.buttonHandle()}> + </button>
+            <input className="addnew" type="text" placeholder="New Task" onKeyPress={this.handleEnter} onChange={(e) => this.textHandle(e.target.value)}/>
+            
             </div>
         )
     }

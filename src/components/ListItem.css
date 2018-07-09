@@ -1,19 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 p {
     width: 40vw;
     height: 3vh;
     background-color: white;
+    padding: 5px 5px;
+    padding-left: 2vw;
     color: black;
     border-radius: 7px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Montserrat;
-    font-size: 12px;
+    justify-content:left;
+    font-family: 'Open Sans';
+    font-size: 14px;
+    
 }
+
+
+input.taskitem {
+    width: 40vw;
+    height: 3vh;
+    border: none;
+    font-family: 'Open Sans';
+    font-size: 14px;
+}
+
 
 div.listItemContainer {
     position: relative;
+    
+    
 
 }
 div.listItemContainer button.delete {
@@ -22,12 +37,14 @@ div.listItemContainer button.delete {
    background-color: transparent;
    color: red;
    font-size: 15px;
+   font-family: 'Open Sans';
    border: none;
 }
 
 div.listItemContainer button.edit {
     position: absolute;
     right: 4vw;
+    font-family: 'Open Sans';
     background-color: transparent;
     border: none;
 
@@ -38,5 +55,6 @@ div.listItemContainer button.save {
     right: 4vw;
     background-color: transparent;
     border: none;
+    font-family: 'Open Sans';
     color: green;
  }

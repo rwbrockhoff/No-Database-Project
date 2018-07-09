@@ -1,20 +1,18 @@
-input {
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+input.addnew {
     width: 40vw;
     height: 3vh;
+    padding-left: 1vw;
     border: none;
+    margin-bottom: 3vw;
+    box-shadow: 10px 10px 52px -5px rgba(0,0,0,0.75);
+    font-family: 'Open Sans';
+    font-size: 14px;
+
 }
 
 input:focus {
    outline: none;
 }
 
-div.container button {
-    background-color: transparent;
-    border: 3px solid white;
-    color: white;
-    font-size: 20px;
-    border-radius: 5px;
-    margin-left: 1vh;
-    padding-left: 10px;
-    padding-right: 10px;
-}

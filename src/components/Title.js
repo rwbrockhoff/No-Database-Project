@@ -9,7 +9,7 @@ export default function Title(){
       
     return (
       <div className="title">
-      <img className="logo" src ={image}/>
+      <img className="logo" src ={image} alt="logo"/>
       <h1> {Title} </h1>
       
       </div>

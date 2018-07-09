@@ -94,7 +94,7 @@ export default class ListItem extends Component {
             return (
                 <div className="listItemContainer">
             <p>  
-                <input type = "text" defaultValue={this.props.nameValue} onKeyPress={this.handleEnter} onChange={(e) => this.saveUpdatedText(e.target.value)}/> 
+                <input className="taskitem" type = "text" defaultValue={this.props.nameValue} onKeyPress={this.handleEnter} onChange={(e) => this.saveUpdatedText(e.target.value)}/> 
                 <button className="save" onClick={() => this.saveHandle()}>Save</button>   
                 <button className="delete" onClick={() => this.handleDelete()}>X</button>
             </p>

@@ -34,5 +34,9 @@ module.exports = {
     res.status(200).send(toDoListArray);
     
     },
+
+    createweather: (req, res) => {
+        res.status(200).send(console.log('weather get request success'));
+    }
 }
 
