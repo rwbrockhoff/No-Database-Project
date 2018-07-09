@@ -53,7 +53,7 @@ export default class ListItem extends Component {
        
         axios.delete('/api/list', { data: {listValue: this.state.savedUpdatedText, index: this.props.index, id: this.props.id}}).then( (res) => {
             this.props.passListWithDeletes(res.data);
-            
+           
                
         })
         

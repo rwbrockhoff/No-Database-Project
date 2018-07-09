@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 div.weather {
     background-color: black;
     color: white;
@@ -6,17 +8,32 @@ div.weather {
     margin-top: 0;
     display: flex;
     align-items: center;
+    font-family: 'Open Sans';
+    font-size: 14px;
     
 }
 
 weather {
     margin-left: 2vw;
+    font-family: 'Open Sans';
+    font-size: 14px;
 }
 
+count {
+    color: rgb(154, 154, 154);
+    position: absolute;
+    right: 2vw;
+    font-family: 'Open Sans';
+    font-size: 12px;
+    
+}
 button {
     background-color: transparent;
     color: rgb(154, 154, 154);
     border: none;
+    margin-left: 1vw;
+}
+input {
     margin-left: 1vw;
 }
 

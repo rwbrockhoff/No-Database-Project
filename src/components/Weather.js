@@ -46,6 +46,7 @@ export default class Weather extends Component {
             <div className="weather">
             <weather>Current weather in {this.props.currentCity}: {this.props.currentWeather}°</weather>
             <button onClick={this.toggleLocation}> Change Location </button>
+            <count> {this.props.deleteCount} Completed Task(s) </count>
                 </div>  )
 
             }
@@ -58,6 +59,7 @@ export default class Weather extends Component {
                     placeholder={this.props.currentCity}
                     onKeyPress={this.handleUpdateEnter}/>
                 <button onClick={this.changeCity}> Update </button>
+                <count> {this.props.deleteCount} Completed Task(s) </count>
                 </div>  )
                 
                 }

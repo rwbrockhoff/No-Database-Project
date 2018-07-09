@@ -14,6 +14,7 @@ class App extends Component {
 
     this.state = {
       listValue: [],
+      deleteCount: 0,
       currentWeather: 0,
       currentCity: "Provo"
     }
@@ -62,8 +63,10 @@ class App extends Component {
 
   passListWithDeletes(list){
    this.setState({
-      listValue: list
+      listValue: list,
+      deleteCount: this.state.deleteCount + 1
     })
+    console.log(this.state.deleteCount)
   }
 
   changeCityForWeather(city){
@@ -85,7 +88,8 @@ class App extends Component {
       <div className="App">
         <Weather changeCityForWeather={this.changeCityForWeather} 
         currentWeather={this.state.currentWeather} 
-        currentCity={this.state.currentCity}/>
+        currentCity={this.state.currentCity}
+        deleteCount={this.state.deleteCount}/>
         <Title />
         <AddItem postToApp={this.postToApp}/>
         <List listValue={this.state.listValue} 
